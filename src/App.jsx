@@ -6,6 +6,10 @@ import PurposeSection from './components/PurposeSection'
 import FeaturesSection from './components/FeatureSection'
 import ScheduleSection from './components/ScheduleSection'
 import PricingSection from './components/PricingSection'
+import ServicesSection from './components/ServicesSection'
+import TestimonialsSection from './components/TestimonialsSection'
+import NewsletterSection from './components/NewsletterSection'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
         <FeaturesSection/>
         <ScheduleSection/>
         <PricingSection/>
+        <ServicesSection/>
+        <TestimonialsSection/>
+        <NewsletterSection/>
+        <Footer/>
       </div>
     </main>
   )
