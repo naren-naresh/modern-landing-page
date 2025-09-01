@@ -5,6 +5,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const ScheduleSection = () => {
   return (
     <motion.section 
+      id='services'
       variants={fadeIn('up', 0.2)}
       initial="hidden"
       whileInView="show"
