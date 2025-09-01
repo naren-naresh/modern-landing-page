@@ -1,120 +1,78 @@
-import { BsStack } from 'react-icons/bs'
-import { HiLightBulb } from 'react-icons/hi'
-import { FiSettings } from 'react-icons/fi'
-import { BiTime } from 'react-icons/bi'
+import scheduleImage from '../assets/stats.webp'
+import { motion } from "framer-motion";
+import { fadeIn, textVariant } from "../utils/motion";
 
-const ServicesSection = () => {
-  const services = [
-    {
-      icon: <BsStack className="w-8 h-8 text-indigo-600" />,
-      title: "Web Design",
-      description: "One for all and all for one, Muskehounds are always ready.",
-      link: "#learn-more"
-    },
-    {
-      icon: <HiLightBulb className="w-8 h-8 text-amber-400" />,
-      title: "Ad-Creatives", 
-      description: "Alphabet Village and the subline of her own road.",
-      link: "#learn-more"
-    },
-    {
-      icon: <FiSettings className="w-8 h-8 text-red-400" />,
-      title: "Automation",
-      description: "Little Blind Text should turn around and return.",
-      link: "#learn-more"
-    },
-    {
-      icon: <BiTime className="w-8 h-8 text-cyan-400" />,
-      title: "Infographics",
-      description: "Nothing the copy said could convince her.",
-      link: "#learn-more"
-    }
-  ]
-
+const ScheduleSection = () => {
   return (
-    <section id="services" className="py-20 container mx-auto px-4 sm:px-6 lg:px-8">
-     <div 
-      className='flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-24'
-     >
-       {/* Header */}
-       <div 
-        className="md:w-1/3"
-       >
-        <h2 
-          className="text-3xl md:text-4xl font-bold mb-6 md:w-4/5"
+    <motion.section 
+      variants={fadeIn('up', 0.2)}
+      initial="hidden"
+      whileInView="show"
+      className="max-w-7xl mx-auto px-4 py-16 md:py-24"
+    >
+      <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
+        {/* Left side - Image */}
+        <motion.div 
+          variants={fadeIn('right', 0.3)}
+          className="w-full md:w-1/2"
         >
-          Future of support with new shape
-        </h2>
-        <p 
-          className="text-gray-600 text-lg mb-4 md:w-4/5"
-        >
-          Discuss your goals, determine success metrics, identify problems
-        </p>
-        <div 
-          className="space-y-3"
-        >
-          <div 
-            className="flex items-center gap-2"
-          >
-            <div className="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-indigo-600"></div>
-            </div>
-            <span className="text-gray-600">UX design content strategy</span>
-          </div>
-          <div 
-            className="flex items-center gap-2"
-          >
-            <div className="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-indigo-600"></div>
-            </div>
-            <span className="text-gray-600">Development bring</span>
-          </div>
-        </div>
-        <button 
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="mt-8 bg-indigo-600 text-white px-8 py-3 cursor-pointer rounded-full hover:bg-indigo-700 transition-colors"
-        >
-          Get started
-        </button>
-      </div>
+          <motion.img 
+            variants={fadeIn('up', 0.4)}
+            src={scheduleImage} 
+            alt="Statistics dashboard" 
+            className="w-full h-auto"
+          />
+        </motion.div>
 
-      {/* Services Grid */}
-      <div 
-        className="grid grid-cols-1 md:grid-cols-2 gap-8"
-      >
-        {services.map((service, index) => (
-          <div 
-            key={index}
-            className="bg-white max-w-72 cursor-pointer rounded-2xl p-6 hover:shadow-xl transition-shadow duration-300"
+        {/* Right side - Content */}
+        <motion.div 
+          variants={fadeIn('left', 0.3)}
+          className="w-full md:w-1/2"
+        >
+          <motion.span 
+            variants={fadeIn('up', 0.4)}
+            className="text-orange-500 font-semibold"
           >
-            <div 
-              className="mb-4"
+            SCHEDULE
+          </motion.span>
+          <motion.h2 
+            variants={textVariant(0.5)}
+            className="text-3xl md:text-4xl font-bold text-navy-900 mt-4 mb-6"
+          >
+            Streamline Your Business <br />
+            With Smart Scheduling Solutions
+          </motion.h2>
+          <motion.p 
+            variants={fadeIn('up', 0.6)}
+            className="text-gray-600 mb-8"
+          >
+            Take control of your time and boost productivity with our intelligent scheduling system. Automate appointments, manage team availability, and deliver exceptional customer experiences through seamless calendar management.
+          </motion.p>
+          <motion.a 
+            variants={fadeIn('up', 0.7)}
+            href="#" 
+            className="text-blue-500 font-semibold flex items-center gap-2 hover:gap-4 transition-all"
+          >
+            Explore scheduling features
+            <motion.svg 
+              variants={fadeIn('left', 0.8)}
+              className="w-5 h-5" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
             >
-              {service.icon}
-            </div>
-            <h3 
-              className="text-xl font-semibold mb-2"
-            >
-              {service.title}
-            </h3>
-            <p 
-              className="text-gray-600 mb-4"
-            >
-              {service.description}
-            </p>
-            <a 
-              href={service.link}
-              className="text-indigo-600 font-medium hover:text-indigo-700 transition-colors"
-            >
-              LEARN MORE
-            </a>
-          </div>
-        ))}
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M17 8l4 4m0 0l-4 4m4-4H3" 
+              />
+            </motion.svg>
+          </motion.a>
+        </motion.div>
       </div>
-     </div>
-    </section>
+    </motion.section>
   )
 }
 
-export default ServicesSection 
+export default ScheduleSection
